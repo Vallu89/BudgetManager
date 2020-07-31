@@ -21,6 +21,59 @@ body{
     
 }
 
+.menu{
+    width: 70%;
+    padding-top: 10px;
+    background-color: #2867b2;
+    text-align: center;
+    margin:auto;
+    margin-top: 10px;
+    -webkit-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+    -moz-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+    box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+    border-radius: 3px;
+    
+}
+.content{
+    width:70%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: whitesmoke;
+    text-align: center;
+    margin:auto;
+    margin-top: 10px;
+    -webkit-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+    -moz-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+    box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+}
+ul{
+    list-style-type: none;
+    display: inline-block;
+}
+ul a{
+    
+    color:whitesmoke;
+    text-decoration: none;
+    display:block;
+}
+ul a:visited{    
+    color:whitesmoke;
+}
+ul a:hover{    
+    color:#b23a28;
+}
+
+ul > li{
+    float:left;
+    widows: 150px;
+    height: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-right: 1px dashed whitesmoke;
+}
+ul > li:first-child{
+    border-left: 1px dashed whitesmoke;
+}
 .login-container{
     background-color: whitesmoke;
     width: 300px;
@@ -48,7 +101,8 @@ body{
 
 input[type=text],
 input[type=password],
-input[type=email]{
+input[type=email],
+input[type=date]{
     width: 300px;
     background-color: #efefef;
     color: #666666;
@@ -63,7 +117,8 @@ input[type=email]{
 
 input[type=text]:focus,
 input[type=password]:focus,
-input[type=email]:focus{
+input[type=email]:focus,
+input[type=date]:focus{
     -webkit-box-shadow: 0px 0px 10px 2px rgba(204,204,204,0.9);
     -moz-box-shadow: 0px 0px 10px 2px rgba(204,204,204,0.9);
     box-shadow: 0px 0px 10px 2px rgba(204,204,204,0.9);
@@ -72,7 +127,8 @@ input[type=email]:focus{
     color:#3978c2;
 }    
 
-input[type=submit]{
+input[type=submit],
+#cancel{
     width: 300px;
     background-color: #2867b2;
     font-size: 20px;
@@ -87,13 +143,15 @@ input[type=submit]{
 }
 
 
-input[type=submit]:focus{
+input[type=submit]:focus,
+#cancel:focus{
     -webkit-box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
     -moz-box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
     box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
 }
 
-input[type=submit]:hover{
+input[type=submit]:hover,
+#cancel:hover{
     background-color: #3978c2;
 }
 
@@ -117,4 +175,31 @@ a:hover{
     text-align: right;
     font-size: 15px;
     margin-top: 20px;
+}
+
+.footer{
+    background-color: #98B315;
+    width:70%;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    -webkit-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+    -moz-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+    box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+    border-radius: 3px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+textarea{
+    border-radius: 3px;
+}
+
+fieldset{
+    width: 90%;
+    margin: auto;
+}
+
+#cancel{
+    text-decoration: none;
 }

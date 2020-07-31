@@ -12,26 +12,29 @@
 
 <body>
 
+	<main>
+		<article>
+			<div class="container">
+				<form action="registration.php" method = "POST">
+					
+					<div><label>Podaj adres email:*  <input type="email" placeholder="email" name="newEmail" onfocus="this.placeholder=''" onblur="this.placeholder='email'" required></label></div>
+					
+					<div><label>Podaj imię: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" placeholder="imię" name="newName" onfocus="this.placeholder=''" onblur="this.placeholder='imię'"></label></div>
+					
+					<div><label>Podaj hasło:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password"placeholder="hasło" name="newPassword" onfocus="this.placeholder=''" onblur="this.placeholder='hasło'" required></label></div>
 
-	<div class="container">
-		<form>
-			
-			<div><label>Podaj adres email:*  <input type="email" placeholder="email" name="newEmail" onfocus="this.placeholder=''" onblur="this.placeholder='email'"></label></div>
-			
-			<div><label>Podaj imię: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" placeholder="imię" name="newName" onfocus="this.placeholder=''" onblur="this.placeholder='imię'"></label></div>
-            
-			<div><label>Podaj hasło:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password"placeholder="hasło" name="newPassword" onfocus="this.placeholder=''" onblur="this.placeholder='hasło'"></label></div>
+					<div><label>Powtórz hasło:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password"placeholder="powtórz hasło" name="repeatPassword" onfocus="this.placeholder=''" onblur="this.placeholder='powtórz hasło'" required></label></div>
+					
+					<input type="submit"value="Zarejestruj się">
 
-			<div><label>Powtórz hasło:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password"placeholder="hasło" name="repeatPassword" onfocus="this.placeholder=''" onblur="this.placeholder='hasło'"></label></div>
-            
-			<input type="submit"value="Zarejestruj się">
-
-			<div class="tip">
-				* Pola wymagane.
+					<div class="tip">
+						* Pola wymagane.
+					</div>
+					
+				</form>
 			</div>
-			
-		</form>
-	</div>
+		</article>
+	</main>
 	
 </body>
 </html>

@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="utf-8" />
+	<title>Dodawanie wydatku</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css" />
+	
+</head>
+
+<body>
+	<header>
+        <div class="container">
+            <img id="logo" alt="Logo" >
+        </div>
+    </header>
+    <nav>
+        <div class="menu" >
+            <ul>
+                <li><a href="#">Dodaj przychód</a></li>
+                <li><a href="#">Dodaj wydatek</a></li>
+                <li><a href="#">Przegladaj bilans</a></li>
+                <li><a href="#">Ustawienia</a></li>
+                <li><a href="#">Wyloguj się</a></li>
+            </ul>
+        </div>
+    </nav>
+	<main>
+        <article>
+            <div class="content">
+                <form action="addIncome.php" id="addIncome" method="POST">
+                    <fieldset>
+                        <legend>Dodaj wydatek</legend>
+                        <div><label>Kwota:&nbsp;<input type="text" name="almount"></label></div>
+                        <div><label>Data:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" name="date" value="<?php echo date('Y-m-d'); ?>"></label></div>
+                        <fieldset>
+                            <legend>Sposób płatności</legend>
+                            <div><label><input type="radio" name="paymentWay">Gotówka</label></div>
+                            <div><label><input type="radio" name="paymentWay">Karta debetowa</label></div>
+                            <div><label><input type="radio" name="paymentWay">Karta kredytowa</label></div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Kategoria</legend>
+                            <div><label><input type="radio" name="incomeCategory">Jedzenie</label></div>
+                            <div><label><input type="radio" name="incomeCategory">Mieszkanie</label></div>
+                            <div><label><input type="radio" name="incomeCategory">Transport</label></div>
+                            <div><label><input type="radio" name="incomeCategory">Telekomunikacja</label></div>
+                            <div><label><input type="radio" name="incomeCategory">Opieka zdrowotna</label></div>
+                            <div><label><input type="radio" name="incomeCategory">Ubranie</label></div>
+                            <div><label><input type="radio" name="incomeCategory">Higiena</label></div>
+                            <div><label><input type="radio" name="incomeCategory">Dzieci</label></div>
+                            <div><label><input type="radio" name="incomeCategory">Rozrywka</label></div>
+                            <div><label><input type="radio" name="incomeCategory">Wycieczka</label></div>
+                            <div><label><input type="radio" name="incomeCategory">Szkolenia</label></div>
+                            <div><label><input type="radio" name="incomeCategory">Książki</label></div>
+                            <div><label><input type="radio" name="incomeCategory">Oszczędności</label></div>
+                            <div><label><input type="radio" name="incomeCategory">Na emeryturę</label></div>
+                            <div><label><input type="radio" name="incomeCategory">Spłata długów</label></div>
+                            <div><label><input type="radio" name="incomeCategory">Darowizna</label></div>
+                            <div><label><input type="radio" name="incomeCategory" checked>Inne</label></div>
+                            <br/>
+                            <div><label>Komentarz( Opcjonalnie ):<br/><textarea name="addIncomeCommand" form="addIncome" rows="5" cols="33"></textarea></div>
+
+                        </fieldset>
+                    </fieldset>
+                    <input type="submit" value="Dodaj wydatek"> 
+                    <a id="cancel" href="main-menu.html">Anuluj</a>
+                </form>
+            </div>
+        </article>
+        
+    </main>
+    <footer>
+		<div class="footer"> BudgetManager v.0.0.1 &copy Wszelkie Prawa Zastrzeżone</div>
+	</footer>
+	
+</body>
+</html>

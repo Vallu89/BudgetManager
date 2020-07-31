@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="utf-8" />
+	<title>Dodawanie przychodu</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css" />
+	
+</head>
+
+<body>
+	<header>
+        <div class="container">
+            <img id="logo" alt="Logo" >
+        </div>
+    </header>
+    <nav>
+        <div class="menu" >
+            <ul>
+                <li><a href="add-income.html">Dodaj przychód</a></li>
+                <li><a href="add-expense.html">Dodaj wydatek</a></li>
+                <li><a href="#">Przegladaj bilans</a></li>
+                <li><a href="#">Ustawienia</a></li>
+                <li><a href="#">Wyloguj się</a></li>
+            </ul>
+        </div>
+    </nav>
+	<main>
+        <article>
+            <div class="content">
+                <form action="addIncome.php" id="addIncome" method="POST">
+                    <fieldset>
+                        <legend>Dodaj przychód</legend>
+                        <div><label>Kwota:&nbsp;<input type="text" name="almount"></label></div>
+                        <div><label>Data:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" name="date" value="<?php echo date('Y-m-d'); ?>"></label></div>
+                        <fieldset>
+                            <legend>Kategoria</legend>
+                            <div><label><input type="radio" name="incomeCategory">Wynagrodzenie</label></div>
+                            <div><label><input type="radio" name="incomeCategory">Odsetki bankowe</label></div>
+                            <div><label><input type="radio" name="incomeCategory">Sprzedaż na allegro</label></div>
+                            <div><label><input type="radio" name="incomeCategory" checked>Inne</label></div>
+                            <br/>
+                            <div><label>Komentarz( Opcjonalnie ):<br/><textarea name="addIncomeCommand" form="addIncome" rows="5" cols="33"></textarea></div>
+
+
+                        </fieldset>
+                    </fieldset>
+                    <input type="submit" value="Dodaj przychód :)"> 
+                    <a id="cancel" href="main-menu.html">Anuluj</a>
+                </form>
+            </div>
+        </article>
+        
+    </main>
+    <footer>
+		<div class="footer"> BudgetManager v.0.0.1 &copy Wszelkie Prawa Zastrzeżone</div>
+	</footer>
+	
+</body>
+</html>
