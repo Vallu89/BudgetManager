@@ -219,7 +219,7 @@ fieldset{
     cursor: pointer;
 }
 table,th{
-    min-width: 200px;
+    min-width: 185px;
     margin:auto;
     padding:5px;
     border:1px solid black;
