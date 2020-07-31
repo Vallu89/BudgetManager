@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="utf-8" />
+	<title>Przeglądaj bilans</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css" />
+	
+</head>
+
+<body>
+	<header>
+        <div class="container">
+            <img id="logo" alt="Logo" >
+        </div>
+    </header>
+    <nav>
+        <div class="menu" >
+            <ul>
+                <li><a href="add-income.html">Dodaj przychód</a></li>
+                <li><a href="add-expense.html">Dodaj wydatek</a></li>
+                <li><a href="review-balance.html">Przegladaj bilans</a></li>
+                <li><a href="#">Ustawienia</a></li>
+                <li><a href="#">Wyloguj się</a></li>
+            </ul>
+        </div>
+    </nav>
+	<main>
+        <div class="content">
+            <section> 
+
+                <div id ="period">Wybierz okres 
+                    <div class="dropdown">
+                        <span><a>bierzący miesiąc</a><br/></span>
+                        <span><a>poprzedni miesiąc</a><br/></span>
+                        <span><a>bierzący rok</a><br/></span>
+                        <div id="betweenDates"><a>niestandardowy</a><br/>
+                            <div class="dropdown2">
+                                <div><span> Od:&nbsp;<input type="date" name="date" value="<?php echo date('Y-m-d'); ?>"></label></span><label></div>
+                                <div><span> Do:&nbsp;<input type="date" name="date" value="<?php echo date('Y-m-d'); ?>"></label></span><label></div>   
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+                
+            </section>
+            <article>
+                <div>
+                    <table>
+                        <tr>
+                            <th colspan="3">
+                                Przychody
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Data</th>
+                            <th>Kategoria</th>
+                            <th>Kwota[zł]</th>
+                        </tr> 
+                        <tr>
+                            <td>20-07-2020</td>
+                            <td>Odsetki bankowe</td>
+                            <td>0,1</td>
+                        </tr>
+                        <tr>
+                            <td>21-07-2020</td>
+                            <td>Sprzedaż na allegro</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">Suma</th>
+                            
+                            <th>10,1</th>
+                        </tr> 
+                    </table>
+                    <br/>
+                    <table>
+                        <tr>
+                            <th colspan="3">
+                                Wydatki
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Data</th>
+                            <th>Kategoria</th>
+                            <th>Kwota[zł]</th>
+                        </tr> 
+                        <tr>
+                            <td>20-07-2020</td>
+                            <td>Jedzenie</td>
+                            <td>134</td>
+                        </tr>
+                        <tr>
+                            <td>20-07-2020</td>
+                            <td>Higiena</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>21-07-2020</td>
+                            <td>Mieszkanie</td>
+                            <td>580</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">Suma</th>
+                            
+                            <th>731,5</th>
+                        </tr> 
+                    </table>
+                </div>
+                <br/><br/><br/>
+                <div>Wydatki:</div>
+                <div id="piechart"></div>
+                <div>
+                    <table>
+                        <tr>
+                            <th>Bilans:</th>
+                            <th>-721</th>
+                        </tr>
+                    </table>
+                </div>
+                <div style="color: red; padding: 10px;">
+                    Uważaj, wpadasz w długi!
+                </div>
+                
+
+                
+            </article> 
+        </div>      
+    </main>
+    <footer>
+		<div class="footer"> BudgetManager v.0.0.1 &copy Wszelkie Prawa Zastrzeżone</div>
+	</footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
+    <script src="dropdown.js"></script>
+    <script src="piechart.js"></script>
+</body>
+</html>
