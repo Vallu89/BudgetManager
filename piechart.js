@@ -27,10 +27,11 @@ function drawChart() {
 
   // Optional; add a title and set the width and height of the chart
   var options = {
+        title:'Wydatki:',
         backgroundColor:'transparent',
         legend:'none',
         pieSliceText:'label',
-        'width':700,
+        'width':'100%',
         'height':700,
         'chartArea':{'width':'80%','height':'80%'}
 
@@ -40,3 +41,7 @@ function drawChart() {
   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
   chart.draw(data, options);
 }
+
+$(window).resize(function(){
+  drawChart();
+});

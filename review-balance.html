@@ -1,128 +1,181 @@
 <!DOCTYPE HTML>
 <html lang="pl">
 <head>
-	<meta charset="utf-8" />
-	<title>Przeglądaj bilans</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Przeglądaj bilans</title>
+    
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	
+    <link rel="stylesheet" href="bootstrap-4.5.2-dist/css/bootstrap.min.css" />
 	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="style.css" />
 	
 </head>
 
 <body>
-	<header>
-        <div class="container">
-            <img id="logo" alt="Logo" >
-        </div>
-    </header>
+
     <nav>
-        <div class="menu" >
-            <ul>
-                <li><a href="add-income.html">Dodaj przychód</a></li>
-                <li><a href="add-expense.html">Dodaj wydatek</a></li>
-                <li><a href="review-balance.html">Przegladaj bilans</a></li>
-                <li><a href="#">Ustawienia</a></li>
-                <li><a href="#">Wyloguj się</a></li>
-            </ul>
+        <div class="menu  navbar navbar-expand-lg navbar-dark " >
+
+            <a class="navbar-brand" href="main-menu.html"><img src="img/Growth_icon.svg.png" width="30" height="30" class="d-inline-block mr-1 align-bottom" alt="">Budget Manager</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
+
+                <span class="navbar-toggler-icon"></span>
+                
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainmenu">
+                <ul class="navbar-nav mr-auto my-2 mx-0">
+
+                        <li class="nav-item"><a class="nav-link" href="add-income.html">Dodaj przychód</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="add-expense.html">Dodaj wydatek</a></li>
+
+                        <li class="nav-item active"><a class="nav-link" href="review-balance.html">Przegladaj bilans</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="#">Ustawienia</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="#">Wyloguj się</a></li>
+                    
+                </ul>
+                <div>
+                    <div class="text-light mx-2  ">Witaj -imię-!</div>
+                    <div class="text-light mx-2 " style="font-size:14px;">Bilans:</div>
+                </div>
+                
+            </div>
         </div>
     </nav>
 	<main>
         <div class="content">
             <section> 
+                <div class="row" >
+       
+                            <select class="period form-control  mx-auto my-2 ">
+                                <option>Ten miesiąc</option>
+                                <option>Poprzedni miesiąc</option>
+                                <option type="button"  data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Wybierz zakres</option>
+                            
+                            </select>
+  
+                </div>
+            
 
-                <div id ="period">Wybierz okres 
-                    <div class="dropdown">
-                        <span><a>bierzący miesiąc</a><br/></span>
-                        <span><a>poprzedni miesiąc</a><br/></span>
-                        <span><a>bierzący rok</a><br/></span>
-                        <div id="betweenDates"><a>niestandardowy</a><br/>
-                            <div class="dropdown2">
-                                <div><span> Od:&nbsp;<input type="date" name="date" value="<?php echo date('Y-m-d'); ?>"></label></span><label></div>
-                                <div><span> Do:&nbsp;<input type="date" name="date" value="<?php echo date('Y-m-d'); ?>"></label></span><label></div>   
-                            </div>
-                        </div>  
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Wybierz zakres</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                            <div class="form-row">
+                                <div class="form-group col-6">
+                                  <label for="date-from">od dnia:</label>
+                                  <input type="date" class="form-control" id="date-from">
+                                </div>
+                                <div class="form-group col-6">
+                                  <label for="date-to">do dnia:</label>
+                                  <input type="date" class="form-control" id="date-to">
+                                </div>
+                              </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="cancel" class="btn btn-secondary" data-dismiss="modal">Anuluj</button>
+                          <button role="submit" class="btn btn-primary">OK</button>
+                        </div>
+                      </div>
                     </div>
                 </div>
                 
             </section>
             <article>
-                <div>
-                    <table>
-                        <tr>
-                            <th colspan="3">
-                                Przychody
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>Data</th>
-                            <th>Kategoria</th>
-                            <th>Kwota[zł]</th>
-                        </tr> 
-                        <tr>
-                            <td>20-07-2020</td>
-                            <td>Odsetki bankowe</td>
-                            <td>0,1</td>
-                        </tr>
-                        <tr>
-                            <td>21-07-2020</td>
-                            <td>Sprzedaż na allegro</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <th colspan="2">Suma</th>
+              <div class="row">
+                    <div class="table-responsive p-4 col-xl-6">
+                        <table class="table table-hover ">
+                            <thead>
+                              <tr>
+                                <th scope="col" colspan="3">Dochody</th>
+                              </tr>
+                              <tr>
+                                
+                                <th scope="col">Data</th>
+                                <th scope="col">Kategoria</th>
+                                <th scope="col">Kwota [ zł ]</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                
+                                <td>03-07-2020</td>
+                                <td>Inne</td>
+                                <td>200</td>
+                              </tr>
+                              <tr>
+                                <td>05-07-2020</td>
+                                <td>Sprzedaż na Allegro</td>
+                                <td>50</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                    </div>
+
+                    <div class="table-responsive p-4 col-xl-6">
+                      <table class="table table-hover ">
+                        <thead>
+                          <tr>
+                            <th scope="col" colspan="3">Wydatki</th>
+                          </tr>
+                          <tr>
                             
-                            <th>10,1</th>
-                        </tr> 
-                    </table>
-                    <br/>
-                    <table>
-                        <tr>
-                            <th colspan="3">
-                                Wydatki
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>Data</th>
-                            <th>Kategoria</th>
-                            <th>Kwota[zł]</th>
-                        </tr> 
-                        <tr>
-                            <td>20-07-2020</td>
+                            <th scope="col">Data</th>
+                            <th scope="col">Kategoria</th>
+                            <th scope="col">Kwota [ zł ]</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            
+                            <td>07-07-2020</td>
                             <td>Jedzenie</td>
                             <td>134</td>
-                        </tr>
-                        <tr>
-                            <td>20-07-2020</td>
-                            <td>Higiena</td>
-                            <td>18</td>
-                        </tr>
-                        <tr>
-                            <td>21-07-2020</td>
+                          </tr>
+                          <tr>                          
+                            <td>08-07-2020</td>
                             <td>Mieszkanie</td>
                             <td>580</td>
-                        </tr>
-                        <tr>
-                            <th colspan="2">Suma</th>
-                            
-                            <th>731,5</th>
-                        </tr> 
-                    </table>
+                          </tr>
+                          <tr>
+                            <td>08-07-2020</td>
+                            <td>Higiena</td>
+                            <td>18</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                  </div>
                 </div>
-                <br/><br/><br/>
-                <div>Wydatki:</div>
-                <div id="piechart"></div>
-                <div>
-                    <table>
-                        <tr>
-                            <th>Bilans:</th>
-                            <th>-721</th>
-                        </tr>
-                    </table>
+                <div class="row">
+                
+                  <div  id="piechart" class="col-12"></div>
+                  
+                      
+                  </div>
+                  <table>
+                    <tr>
+                        <th>Bilans:</th>
+                        <th>-531</th>
+                    </tr>
+                  </table>
+                  <div style="color: red; padding: 10px;">
+                      Uważaj, wpadasz w długi!
                 </div>
-                <div style="color: red; padding: 10px;">
-                    Uważaj, wpadasz w długi!
-                </div>
+              </div>
                 
 
                 
@@ -130,11 +183,17 @@
         </div>      
     </main>
     <footer>
-		<div class="footer"> BudgetManager v.0.0.1 &copy Wszelkie Prawa Zastrzeżone</div>
+		<div class="footer"> BudgetManager v.0.0.1 &copy; Wszelkie Prawa Zastrzeżone</div>
 	</footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
+    <script  src="https://www.gstatic.com/charts/loader.js"></script> 
     <script src="dropdown.js"></script>
     <script src="piechart.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	
+	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
