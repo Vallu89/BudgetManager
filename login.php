@@ -1,7 +1,7 @@
 <?php
     // https://pasja-informatyki.pl/programowanie-webowe/php-mysqli-wariant-proceduralny/ --> podstawowe komendy MySQLi 
     session_start();
-    if(!isset($_POST['login']) && !isset( $_POST['password'])){
+    if(!isset($_POST['email']) && !isset( $_POST['password'])){
         header("Location:index.php");
         exit();
     }
@@ -13,14 +13,14 @@
        echo "Error: ".$connect->connect_errno;
     }
     else{
-        $login = $_POST['login'];
+        $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $login = htmlentities($login, ENT_QUOTES,"UTF-8");
+        //$email = htmlentities($email, ENT_QUOTES,"UTF-8");
 
-        $sql =sprintf("SELECT * FROM users WHERE username='%s'",mysqli_real_escape_string($connect,$login));
+        $sql =sprintf("SELECT * FROM users WHERE email='%s'",mysqli_real_escape_string($connect,$email));
 
-        if($result = @$connect->query($sql)){
+        if($result = $connect->query($sql)){
            $ilu_userow = $result->num_rows; 
            if($ilu_userow>0){
                 $row= $result->fetch_assoc();

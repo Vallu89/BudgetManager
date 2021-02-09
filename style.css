@@ -187,6 +187,12 @@ a:hover{
     margin-top: 10px;
 }
 
+.error{
+    color:red;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 textarea{
     border-radius: 3px;
 }
@@ -256,3 +262,4 @@ td{
 #expense-word{
     text-align: center;
 }
+

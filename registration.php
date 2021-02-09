@@ -106,12 +106,30 @@
 				<form  action="registration.php" method = "POST">
 					
 					<div><label>Podaj adres email:*  <input type="email" placeholder="email" name="newEmail" onfocus="this.placeholder=''" onblur="this.placeholder='email'" required></label></div>
+
+                    <?php
+                    
+                        if(isset($_SESSION['e_email'])){
+                            echo '<div class="error">'.$_SESSION['e_email'].'</div>';
+                            unset($_SESSION['e_email']);
+                        }
+
+                    ?>
 					
 					<div><label>Podaj imię: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" placeholder="imię" name="newName" onfocus="this.placeholder=''" onblur="this.placeholder='imię'"></label></div>
 					
 					<div><label>Podaj hasło:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" placeholder="hasło" name="newPassword" onfocus="this.placeholder=''" onblur="this.placeholder='hasło'" required></label></div>
 
 					<div><label>Powtórz hasło:*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" placeholder="powtórz hasło" name="repeatPassword" onfocus="this.placeholder=''" onblur="this.placeholder='powtórz hasło'" required></label></div>
+
+                    <?php
+                        
+                        if(isset($_SESSION['e_password'])){
+                            echo '<div class="error">'.$_SESSION['e_password'].'</div>';
+                            unset($_SESSION['e_password']);
+                        }
+
+                    ?>
 					
 					<input type="submit" value="Zarejestruj się">
 
